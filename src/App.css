@@ -1,0 +1,375 @@
+.app {
+    padding: 0;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+title {
+    background-color: black;
+    color: white;
+}
+
+.app3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.app2 {
+    display: flex;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.display-divs {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.display {
+    text-align: left;
+    font-size: 2rem;
+    padding: 0 10px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.788);
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.result {
+    text-align: right;
+    margin: 0 10px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 3.5rem;
+    color: white;
+    overflow: hidden;
+}
+
+.result.error {
+    color: rgb(196, 40, 40);
+    font-size: 2.8rem;
+}
+
+.history {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    background-color: rgb(13, 70, 70);
+    z-index: 3;
+    transform: translateY(-100%); 
+    transition: 0.5s;  
+}
+
+.history.transform {
+    transform: translateY(0);
+}
+
+.history .expression {
+    font-size: 1.4rem;
+}
+
+.history .result {
+    text-align: right;
+    font-size: 2rem;
+    margin-top: -20px;
+    margin-bottom: 5px;
+    padding-left: -10px;
+    border-bottom: 3px dashed white;
+}
+
+.iconDiv {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 7;
+}
+
+.histBtn {
+    width: 50px;
+    height: 40px;
+    background-color: rgb(126, 25, 25);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.histBtn:hover {
+    background-color: rgba(255, 255, 255, 0.788);
+    color: black;
+    outline: none;
+}
+
+.buttons {
+    width: 200%;
+    height: 70%;
+    display: flex;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+
+.buttons.func {
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+button {
+    border: none;
+    margin: 10px;
+    font-size: 1.3rem;
+    display: flex;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+
+#btn1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-content: space-between;
+    justify-content: center;
+    background-color: #444;
+    width: 40%;
+}
+
+#btn1 button {
+    width: 80%;
+    height: 60%;
+    border-radius: 20%;
+    outline: none;
+}
+
+#btn1 button:hover {
+    background-color: #000;
+    color: white;
+}
+
+#btn2 {
+    display: grid;
+    background-color: #222;
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: center;
+    width: 10%;
+}
+
+#btn2 button {
+    width: 80%;
+    border-radius: 20%;
+    outline: none;
+    background-color: red;
+    color: white;
+    height: 70%;
+}
+
+#btn2 button:hover {
+    background-color: #000;
+    color: white;
+}
+
+#btn3 {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-color: rgb(48, 32, 32);
+    justify-content: center;
+    padding-left: 40px;
+}
+
+#btn3 button {
+    background-color: rgb(121, 53, 53);
+    color: white;
+    width: 60%;
+    height: 70%;
+    border-radius: 20%;
+    outline: none;
+}
+
+#btn3 button:hover {
+    background-color: white;
+    color:  rgb(121, 53, 53); 
+}
+
+@media (min-width: 400px) and (max-width: 800px) and (orientation: landscape) {
+    .app {
+        height: 140vh;
+    }
+    .app3 {
+        min-height: 100vh;
+    }
+
+    #btn2 {
+        grid-template-rows: 17% 17% 17% 17% 17% 17%;
+    }
+
+    #btn1, #btn3 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .app2 {
+    }
+
+    #btn1 button {
+        font-size: 2.4rem;
+    }
+
+    #btn2 button {
+        width: 100%;
+        font-size: 2.4rem;
+    }
+
+    #btn3 button {
+        font-size: 2.4rem;
+    }
+
+    .display {
+        font-size: 2.7rem;
+        padding: 0 30px;
+    }
+
+    .result {
+        font-size: 4rem;
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .app {
+        background-image: linear-gradient(to bottom left, #6d2929, #444444);
+    }
+
+    .app3 {
+        width: 70%;
+        height: 95%;
+    }
+
+    .app2 {
+        border-radius: 20px;
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .display-divs {
+        height: 25%;
+    }
+
+    .buttons {
+        height: 75%;
+    }
+
+    .display {
+        font-size: 2.5rem;
+        padding-left: 30px;
+    }
+
+    .result {
+        font-size: 3.5rem;
+        padding-right: 30px;
+    }
+
+    #btn1 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #btn1 button {
+        font-size: 2.5rem;
+    }
+
+    #btn2 button {
+        font-size: 2rem;
+        height: 60%;
+    }
+
+    #btn3 button {
+        font-size: 2.5rem;
+    }
+
+    #btn2 {
+        grid-template-rows: 17% 17% 17% 17% 17% 17%;
+    }
+
+    #btn3 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1201px) {
+    .app {
+        background-image: linear-gradient(to bottom left, #6d2929, #444444);
+    }
+
+    .app3 {
+        width: 50%;
+        height: 80%;
+    }
+    
+    .app2 {
+        border-radius: 20px;
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+        overflow-y: auto;
+    }
+
+    .histBtn {
+        background-color: #444444;
+    }
+
+    .display {
+        font-size: 2.5rem;
+        padding-left: 30px;
+    }
+
+    .result {
+        font-size: 3.5rem;
+        padding-right: 30px;
+    }
+
+    #btn1 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #btn1 button {
+        font-size: 2.5rem;
+    }
+
+    #btn2 button {
+        font-size: 2rem;
+    }
+
+    #btn3 button {
+        font-size: 2.5rem;
+    }
+
+    #btn2 {
+    }
+
+    #btn3 {
+    }
+}
